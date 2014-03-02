@@ -67,7 +67,7 @@ int main(void){
 	struct sanp *now = a;
 
 	while (check == 0){
-		PRINT1(s, *now.s);
+		PRINT1(s, now->s);
 		ans = getchar();
 		if (ans == 'y'){
 			//			count += 1;
