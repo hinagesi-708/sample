@@ -16,11 +16,6 @@ typedef struct sanp{
 
 
 int main(void){
-	printf("楽器診断!ズバリ!!あなたのキャラどの楽器??\nはい→y いいえ→n で答えてねっ!!\n");
-	//	int count = 0;
-	int check = 0;
-	char ans;
-	int i = 0;
 
 	static struct sanp a[] = {
 		{ "ｺﾄﾞﾓﾉｺﾛ ｾﾝｾｲﾆ ｲﾔﾅﾖｳｼﾞｦ ｲｲﾂｹﾗﾚﾀ"							, 1		, 2		, 0 },
@@ -69,20 +64,27 @@ int main(void){
 	};
 
 	struct sanp *now = a;
+
+	printf("楽器診断!ズバリ!!あなたのキャラどの楽器??\nはい→y いいえ→n で答えてねっ!!\n");
+	//	int count = 0;
+	int check = 0;
+	char ans;
+	int i = 0;
+
 	
 	do{
 		while (check == 0){
-			PRINT1(s, a[i].s);
+			PRINT1(s, (a[i].s));
 			//		PRINT1(s, now->s);
 			ans = getchar();
 			if (ans == 'y'){
 				//			count += 1;
 				check = 1;
-				i = a[i].yes;
+				i = (a[i].yes);
 			}
 			else if (ans == 'n'){
 				check = 1;
-				i = a[i].no;
+				i = (a[i].no);
 			}
 			else{
 				printf("yかnで答えてね！！\n");
